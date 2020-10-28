@@ -1,0 +1,63 @@
+ 1  vim ~/.bash_history 
+    2  exit
+    3  git --version
+    4  sudo apt-get update
+    5  sudo apt-get install virtualbox
+    6  sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+    7  sudo chmod +x ./kubectl
+    8  sudo mv ./kubectl /usr/local/bin/kubectl
+    9  curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin && rm minikube
+   10  sudo apt-get install docker.io
+   11  sudo minikube start --vm-driver=none
+   12  sudo kubectl run nginx --image=nginx --port=80
+   13  ifconfig
+   14  sudo kubectl get pods
+   15  sudo kubectl delete pods --all
+   16  sudo kubectl get pods
+   17  exit
+   18  mkdir yml
+   19  ls
+   20  cd yml/
+   21  gedit nginx_pod.yml
+   22  nano nginx_pod.yml
+   23  vi nginx_pod.yml
+   24  cat nginx_pod.yml 
+   25  sudo minikube start --vm-driver=none
+   26  sudo kubectl apply -f nginx_pod.yml 
+   27  sudo kubectl get pods
+   28  cat nginx_pod.yml 
+   29  ls
+   30  sudo kubectl get pods
+   31  clear
+   32  vi nginx_rc.yml
+   33  sudo kubectl apply -f nginx_rc.yml
+   34  sudo kubectl get rc 
+   35  sudo kubectl get pods -l app=nginx
+   36  sudo kubectl delete pods -l app=nginx
+   37  sudo kubectl get pods -l app=nginx
+   38  sudo kubectl get rc 
+   39  ls
+   40  clear
+   41  vi nginx_service.yml
+   42  ls
+   43  sudo kubectl apply -f nginx_service.yml 
+   44  sudo kubectl get svc
+   45  ifconfig
+   46  clear
+   47  vi nginx_deployment.yml
+   48  sudo kubectl apply -f nginx_deployment.yml 
+   49  vi nginx_deployment.yml
+   50  sudo kubectl apply -f nginx_deployment.yml 
+   51  sudo kubectl get deployment
+   52  cat nginx_deployment.yml 
+   53  sudo kubectl get pods
+   54  vi nginx_deployment.yml 
+   55  vi nginx_service.yml 
+   56  sudo kubectl apply -f nginx_service.yml 
+   57  sudo kubectl get svc
+   58  vi nginx_deployment.yml 
+   59  sudo kubectl apply -f nginx_deployment.yml 
+   60  sudo kubectl rollout history deploy nginx-deployment
+   61  sudo kubectl rollout undo deploy nginx-deployment --to-revision=1
+   62  history
+   63  history > commands-k8s.txt
